@@ -1,0 +1,20 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © theomgdev
+
+//@version=5
+indicator("Engulf Indicator")
+//atr Length
+atrLength = input.int(14, "ATR Length", minval=1)
+upperBand = input.int(1, "Upper Band")
+lowerBand = input.int(-1, "Lower Band")
+atr = ta.atr(atrLength)
+
+getEngulf(len)=>
+    needleRatio = math.abs(close-open)/math.abs(high-low)
+    sizeRatio = math.abs(close-open)-math.abs(close[1]-open[1])
+    atrFiltered = (needleRatio*sizeRatio)/ta.atr(len)
+    engulf = atrFiltered-atrFiltered[1]
+
+plot(getEngulf(atrLength), "Engulf", color=color.green, linewidth=2, style=plot.style_area, transp=50)
+hline(upperBand, "Engulf Upper Band", color=color.blue)
+hline(lowerBand, "Engulf Lower Band", color=color.blue)
