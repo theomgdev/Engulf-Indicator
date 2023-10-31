@@ -12,7 +12,7 @@ The indicator calculates the ratio of the body size to the wick size of each can
 
 ## How to use it
 
-You can use this indicator to identify potential entry and exit points for your trades. For example, if you are in a long position and the indicator crosses below -1 or above 1, you may consider closing your position or tightening your stop loss. Conversely, if you are in a short position and the indicator crosses above 1 or below -1, you may consider closing your position or trailing your stop loss, because higher deviations means end of engulfing and potential trend reversal.
+You can use this indicator to identify potential entry and exit points for your trades. For example, if you are in a long position and the indicator crosses below -1 or above 1, you may consider closing your position or tightening your stop loss. Conversely, if you are in a short position and the indicator crosses above 1 or below -1, you may consider closing your position or trailing your stop loss, because **higher deviation means end of engulfing and potential trend reversal**.
 
 You can also adjust the ATR length and the upper and lower band values according to your preference and trading style. The default values are 14 for ATR length, 1 for upper band, and -1 for lower band.
 
