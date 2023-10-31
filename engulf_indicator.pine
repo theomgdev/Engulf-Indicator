@@ -9,10 +9,10 @@ upperBand = input.int(1, "Upper Band")
 lowerBand = input.int(-1, "Lower Band")
 atr = ta.atr(atrLength)
 
-getEngulf(len)=>
+getEngulf(atrLen)=>
     needleRatio = math.abs(close-open)/math.abs(high-low)
     sizeRatio = math.abs(close-open)-math.abs(close[1]-open[1])
-    atrFiltered = (needleRatio*sizeRatio)/ta.atr(len)
+    atrFiltered = (needleRatio*sizeRatio)/ta.atr(atrLen)
     engulf = atrFiltered-atrFiltered[1]
 
 plot(getEngulf(atrLength), "Engulf", color=color.green, linewidth=2, style=plot.style_area, transp=50)
